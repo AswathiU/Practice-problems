@@ -1,16 +1,16 @@
 //Number of recent calls
 
 class RecentCounter {
-     private Queue<Integer> queue;
+Queue<Integer> q;
     public RecentCounter() {
-        this.queue = new LinkedList<>();
+        q=new LinkedList<>();
     }
     
     public int ping(int t) {
-        queue.add(t);
-        while(queue.peek() < t - 3000) {
-            queue.poll();
-        }
-        return queue.size();
+        q.add(t);
+        while(q.peek()<t-3000)
+        q.poll();
+        return q.size();
     }
 }
+
